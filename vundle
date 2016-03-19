@@ -1,0 +1,309 @@
+set nocompatible               " be iMproved
+
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+autocmd! bufwritepost vundle source ~/.vim/vundle
+
+"" let Vundle manage Vundle,
+"" required
+Plugin 'VundleVim/Vundle.vim'
+
+"" project wide search
+Plugin 'mileszs/ack.vim'
+"" Plugin 'rking/ag.vim'
+
+"" Yaml stuff
+Plugin 'avakhov/vim-yaml'
+
+"" cmd-t replacement
+Plugin 'ctrlpvim/ctrlp.vim'
+
+"" open splits from quickfix
+Plugin 'yssl/QFEnter'
+
+"" comment multiple lines
+Plugin 'scrooloose/nerdcommenter'
+
+"" project drawer
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+"" makes NERDTree awesome if you use tabs
+Plugin 'jistr/vim-nerdtree-tabs'
+
+" Make Vim close tabs the way every other editor does
+" by switching to the next tab to the left.
+Plugin 'jordwalke/VimCloser'
+
+"" tab completion like textmate for snippets
+""Plugin 'garbas/vim-snipmate'
+
+"" vim-snipmate dependency
+"" Plugin 'tomtom/tlib_vim'
+
+"" vim-snipmate dependency
+""Plugin 'MarcWeber/vim-addon-mw-utils'
+
+"" vim-snipmate dependency
+"" Plugin 'honza/vim-snippets'
+
+"" syntax checking on save
+Plugin 'scrooloose/syntastic'
+
+""
+""Plugin 'ngmy/vim-rubocop'
+
+"" aligning => stuff
+"" Plugin 'junegunn/vim-easy-align'
+Plugin 'godlygeek/tabular'
+
+"" drawer showing ctags
+Plugin 'majutsushi/tagbar'
+
+"" easily switch between buffers
+Plugin 'jeetsukumaran/vim-buffergator'
+
+"" enabled .feature files
+Plugin 'jondkinney/vim-cucumber'
+
+"" <leader><leader>w jump to highlighted word
+Plugin 'Lokaltog/vim-easymotion'
+
+"" auto adds end to method definitions, blocks, etc
+Plugin 'tpope/vim-endwise'
+
+"" git wrapper
+Plugin 'tpope/vim-fugitive'
+
+"" some vim runtime files that are more up to date than those distributed with vim itself
+Plugin 'tpope/vim-git'
+
+""  enabled .haml extension
+Plugin 'tpope/vim-haml'
+
+"" show indent guides to the left of the methods
+Plugin 'nathanaelkane/vim-indent-guides'
+
+"" some nice text wrappers for editing erb or html, ctrl+x in insert mode then type = or - or @ or #,etc
+Plugin 'tpope/vim-ragtag'
+
+"" essential rails plugin for navigating a rails proj
+Plugin 'tpope/vim-rails'
+
+Plugin 'tpope/vim-projectionist'
+
+"" easily change what something is surrounded by
+Plugin 'tpope/vim-surround'
+
+"" repeat surround (and other) changes with .
+Plugin 'tpope/vim-repeat'
+
+"" allows for moving blocks of text up and down in place like you could in textmate
+""Plugin 'tpope/vim-unimpaired'
+
+"" Smart selection between pairs
+Plugin 'gorkunov/smartpairs.vim'
+
+"" theme
+Plugin 'altercation/vim-colors-solarized'
+
+"" lets you ctrl+w+o to toggle out a split to it's own buffer (easily can go back with the same command)
+Plugin 'vim-scripts/ZoomWin'
+
+"" highlight code and send to pastie service
+Plugin 'tpope/vim-pastie'
+
+"" Proper syntax highlighting and commenting capabilities
+""Plugin 'tmux-plugins/vim-tmux'
+
+"" Regain focus events for terminal vim
+""Plugin 'tmux-plugins/vim-tmux-focus-events'
+
+"" send vim commands (or text) to adjacent tmux pane
+""Plugin 'benmills/vimux'
+
+"" sends focused tests to vimux with <leader>t
+"" Plugin 'jgdavey/vim-turbux'
+"" Plugin 'botandrose/vim-testkey'
+
+"" tpope answer to vimux (sends commands to tmux pane)
+Plugin 'tpope/vim-dispatch'
+
+"" thoughtbot vim-rspec send to vim-dispatch, etc
+Plugin 'thoughtbot/vim-rspec'
+
+"" show project wide list of TODO, NOTE, FIXME
+"Plugin 'LStinson/TagmaTasks'
+
+"" strip trailing whitespace on save
+Plugin 'itspriddle/vim-stripper'
+
+"" enable coffeescript
+Plugin 'kchmck/vim-coffee-script'
+
+"" highlights Gemfile and wraps bundle open
+Plugin 'tpope/vim-bundler'
+
+"" tig inside of vim with more power to traverse file history
+Plugin 'gregsexton/gitv'
+Plugin 'jreybert/vimagit'
+
+"" refactor model names
+Plugin 'tpope/vim-abolish'
+
+"" cycle through yanks/deletes in a visual window or after pasting
+Plugin 'vim-scripts/YankRing.vim'
+
+"" undo tree history navigation
+Plugin 'sjl/gundo.vim'
+
+"" Gist things
+Plugin 'mattn/gist-vim'
+
+"" dependency of gist-vim
+Plugin 'mattn/webapi-vim'
+
+"" better vertical column selection / changing (vic will visual in column)
+Plugin 'coderifous/textobj-word-column.vim'
+
+"" show diff in the left gutter
+Plugin 'airblade/vim-gitgutter'
+
+"" intelligent session management. Auto writes changes when opening splits or quitting Vim
+Plugin 'tpope/vim-obsession'
+
+"" gives a count of the number of matches and which one you're on
+"" I added the ability to not jump to the next item immediately, but it has since been merged back.
+Plugin 'henrik/vim-indexed-search'
+
+"" Project wide find and replace http://thepugautomatic.com/2012/07/project-wide-search-and-replace-in-vim-with-qdo/
+"Plugin 'henrik/vim-qargs'
+
+" Don't jump to the next search, stay on current one
+Plugin 'bronson/vim-visual-star-search'
+
+"" ensures windows are at least 80 chars wide (my PR added the ability to ignore a list of additional bufnames)
+" Plugin 'justincampbell/vim-eighties'
+
+"" lets you type new things for each search replacement
+Plugin 'hwrod/interactive-replace'
+
+" better incremental search, highlights in realtime everywhere as you type
+Plugin 'haya14busa/incsearch.vim'
+
+"" navigate with C-h/j/k/l in tmux and vim
+""Plugin 'christoomey/vim-tmux-navigator'
+
+"" like sublime multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+
+"" Drag in Visual mode
+Plugin 'gavinbeatty/dragvisuals.vim'
+
+" powerline for tmux/vim
+Plugin 'powerline/powerline'
+
+" Vim-airline
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    " Do Mac stuff here
+    Plugin 'bling/vim-airline'
+    " Plugin 'edkolev/tmuxline.vim'
+  endif
+endif
+
+"" note taking
+"Plugin 'xolox/vim-notes'
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-shell'
+
+" ansi escape sequences concealed
+Plugin 'vim-scripts/AnsiEsc.vim'
+
+"" For writing Prose
+Plugin 'kana/vim-textobj-user'
+Plugin 'reedes/vim-pencil'
+Plugin 'reedes/vim-lexical'
+Plugin 'reedes/vim-litecorrect'
+Plugin 'reedes/vim-textobj-sentence'
+Plugin 'reedes/vim-textobj-quote'
+
+"" Execute lines of code in Vim and show the results
+"" Plugin 't9md/vim-ruby-xmpfilter'
+
+"" Select ruby blocks
+"" Plugin 'kana/vim-textobj-user' # already initialied in the prose section
+Plugin 'nelstrom/vim-textobj-rubyblock'
+
+"" Ruby fun
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rake'
+
+"" RSpec syntax highlighting improvements
+Plugin 'jondkinney/rspec.vim'
+
+"" Run your Ruby tests
+Plugin 'skalnik/vim-vroom'
+
+"" Holy grail of completion?
+"" Plugin 'Valloric/YouCompleteMe'
+
+"" Markdown
+"Plugin 'tpope/vim-markdown'
+
+"" Remote pairing
+"Plugin 'Floobits/floobits-neovim'
+
+"" Slim template syntax highlighting
+Plugin 'slim-template/vim-slim'
+
+" Dash docs
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    " Do Mac stuff here
+    Plugin 'rizzatti/funcoo.vim'
+    Plugin 'rizzatti/dash.vim'
+  endif
+endif
+
+"" Handlebars templates
+Plugin 'mustache/vim-mustache-handlebars'
+
+Plugin 'ecomba/vim-ruby-refactoring'
+
+Plugin 'killphi/vim-legend'
+
+"Plugin 'bruno-/vim-ruby-fold'
+
+Plugin 'othree/yajs.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+
+"" Less good than sass... so, yea
+Plugin 'tpope/vim-dotenv'
+
+"" Code comments to github issues
+Plugin 'Shougo/unite.vim'
+Plugin 'alpaca-tc/vim-unite-watson.vim'
+
+Plugin 'vimwiki/vimwiki'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
