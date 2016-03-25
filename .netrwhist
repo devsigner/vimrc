@@ -1,10 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/cece/augmente/web-app'
-let g:netrw_dirhist_2='/Users/cece/.vim'
-let g:netrw_dirhist_3='/Users/cece/augmente/web-app'
-let g:netrw_dirhist_4='/Users/cece/augmente/web-app/app/controllers/api'
-let g:netrw_dirhist_5='/Users/cece/augmente/web-app/app/controllers/api/concerns'
-let g:netrw_dirhist_6='/Users/cece/augmente/web-app'
-let g:netrw_dirhist_7='/Users/cece/augmente/web-app/spec'
-let g:netrw_dirhist_8='/Users/cece/augmente/web-app'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/cece/.vim'

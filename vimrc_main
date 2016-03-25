@@ -105,10 +105,15 @@ map <leader>1 :set nonumber! number?<CR>
 nmap <silent> ,cq :cclose<CR>
 nmap <silent> ,co :copen<CR>
 
-" open Gitv
+" Gitv
+" --------------
 nmap <leader>gv :NERDTreeTabsClose<cr>:Gitv --all<cr>
 nmap <leader>gV :NERDTreeTabsClose<cr>:Gitv! --all<cr>
 vmap <leader>gV :NERDTreeTabsClose<cr>:Gitv! --all<cr>
+
+" Magit
+" --------------
+let g:magit_show_magit_mapping="<Leader>gm"
 
 " Exit out of insert and insert a new line before with KK
 inoremap KK <ESC>O
@@ -196,10 +201,6 @@ nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>go :Gcheckout<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gl :Glog<cr>
-
-" Magit
-" --------------
-let g:magit_show_magit_mapping="<Leader>gm"
 
 " Numbers
 " --------------
@@ -362,7 +363,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let NERDTreeWinSize = 51
 let NERDTreeShowLineNumbers=1
-let g:nerdtree_tabs_focus_on_files=1
+let g:nerdtree_tabs_focus_on_files=0
 let g:nerdtree_tabs_synchronize_focus=0
 let g:nerdtree_tabs_synchronize_view=0
 let g:nerdtree_tabs_open_on_console_startup=0
@@ -373,20 +374,15 @@ map <F5> 99+ 51_ j k
 
 " --------------
 
-" CtrlP
+" ZFZ
 " --------------
-" Exclude files from ctrl-p finder
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-" Change default mapping
-"let g:ctrlp_map = '<c-f>'
-let g:ctrlp_map = '<leader>f'
-"let g:ctrlp_cmd = 'CtrlPMixed'
+map <Leader>f :Files<CR>
+map <Leader>b :Buffers<CR>
 
-" allows opening a split from ctrlp with <c-i>, since using 'i' from NERDTree
-" is how to open a horizontal split there. Keep em the same.
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>', '<c-i>']
-  \ }
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 " --------------
 
@@ -642,11 +638,11 @@ endfunction
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 " Buffrgator settings
-let g:buffergator_viewport_split_policy="B"
-let g:buffergator_split_size=10
-let g:buffergator_suppress_keymaps=1
-let g:buffergator_sort_regime = "mru"
-map <Leader>b :BuffergatorToggle<cr>
+"let g:buffergator_viewport_split_policy="B"
+"let g:buffergator_split_size=10
+"let g:buffergator_suppress_keymaps=1
+"let g:buffergator_sort_regime = "mru"
+"map <Leader>b :BuffergatorToggle<cr>
 
 " commands from
 " Pull up the TODO And NOTE and FIXME definitions from the whole app
@@ -894,7 +890,7 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_aggregate_errors = 1
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
 " Visual Mode Orange Background, Black Text
@@ -935,12 +931,6 @@ function! CleanFile()
   call Preserve(':set expandtab | retab!')
   call Preserve(':silent! %s#\($\n\s*\)\+\%$##')
   call Preserve(':%!cat -s')
-endfunction
-
-function TrimEndLines()
-    let save_cursor = getpos(".")
-    :silent! %s#\($\n\s*\)\+\%$##
-    call setpos('.', save_cursor)
 endfunction
 
 au BufWritePre * call CleanFile()
