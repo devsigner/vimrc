@@ -604,6 +604,8 @@ nnoremap ( :tabp<CR>
 " next tab ')'
 nnoremap ) :tabn<CR>
 
+nmap <leader>t :tabnew<CR>
+
 " Load up all buffers into tabs
 nmap <localleader>bt :tab sball<CR>
 
