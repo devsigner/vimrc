@@ -116,14 +116,15 @@ vmap <leader>gV :NERDTreeTabsClose<cr>:Gitv! --all<cr>
 let g:magit_show_magit_mapping="<Leader>gm"
 
 " Exit out of insert and insert a new line before with KK
-inoremap KK <ESC>O
+"inoremap KK <ESC>O
 
 " Exit out of insert and insert a new line with jj
-inoremap jj <ESC>o
+"inoremap jj <ESC>o
 
-" insert mode
-inoremap II <Esc>I
-inoremap AA <Esc>A
+" Exit out of insert and insert at line beginning with II
+"inoremap II <Esc>I
+" Exit out of insert and insert at line end with AA
+"inoremap AA <Esc>A
 
 " Redo
 map U :redo<CR>
