@@ -348,7 +348,7 @@ set guifont=Meslo\ LG\ M\ for\ Powerline
 " set text wrapping toggles
 "nmap <silent> <leader><Leader>tw :set invwrap<CR>:set wrap?<CR>
 
-" find merge conflict markers
+" GIT: find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " --------------
@@ -593,6 +593,10 @@ nmap <leader>t :tabnew<CR>
 " Load up all buffers into tabs
 nmap <localleader>bt :tab sball<CR>
 
+" --------------
+
+" copy/paste
+" --------------
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
