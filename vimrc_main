@@ -3,6 +3,8 @@ syntax enable                   "Turn on syntax highlighting
 
 let mapleader = ",""            "remap leader to ',' which is much easier than '\'
 let maplocalleader = "\\"       "add a local leader of '\'
+" remap ; to : so you can just do `;w` instead of <Shift-; w>
+nnoremap ; :
 
 "set cindent                    "recommended seting for automatic C-style indentation
 "set noexrc                     " don't use the local config
@@ -164,9 +166,10 @@ noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 " Toggle keep current line in the center of the screen mode
 nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
+
 " This rewires n and N to do the highlighing...
-nnoremap <silent> n   n:call HLNext(0.4)<cr>
-nnoremap <silent> N   N:call HLNext(0.4)<cr>
+nnoremap <silent> N   n:call HLNext(0.4)<cr>
+nnoremap <silent> n   N:call HLNext(0.4)<cr>
 
 " DRAG IN VISUAL MODE
 " -------------------
@@ -325,18 +328,6 @@ let g:vroom_cucumber_path='cucumber'
 
 " ------------------------
 
-": Tab completion
-" ------------------------
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-
 "" fix mouse support inside tmux
 if &term =~ '^screen' || &term =~ '^xterm'
   " tmux knows the extended mouse mode
@@ -349,7 +340,7 @@ set guifont=Meslo\ LG\ M\ for\ Powerline
 "nmap <silent> <leader><Leader>tw :set invwrap<CR>:set wrap?<CR>
 
 " GIT: find merge conflict markers
-nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+nmap <silent> <leader>mc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " --------------
 
@@ -361,13 +352,15 @@ map <Leader>d :NERDTreeTabsToggle<CR>
 map <Leader>D :NERDTreeFind<CR>
 
 let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
+let NERDTreeDirArrows=3
 let NERDTreeWinSize = 51
 let NERDTreeShowLineNumbers=1
 let g:nerdtree_tabs_focus_on_files=0
 let g:nerdtree_tabs_synchronize_focus=0
 let g:nerdtree_tabs_synchronize_view=0
 let g:nerdtree_tabs_open_on_console_startup=0
+let g:NERDTreeDirArrowExpandable = '‣'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " resizes nerdtree if you're cursor is not actually in nerdtree (needs to be to the right of it)
 map <leader>5 99+ 51_ j k
