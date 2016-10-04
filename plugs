@@ -36,13 +36,14 @@ Plug 'jordwalke/VimCloser'
 
 "" tab completion like textmate for snippets
 Plug 'garbas/vim-snipmate'
-"" vim-snipmate dependency
-Plug 'tomtom/tlib_vim'
-"" vim-snipmate dependency
-Plug 'MarcWeber/vim-addon-mw-utils'
 
-"" vim-snipmate dependency
-"" Plug 'honza/vim-snippets'
+"" Snippets
+
+"" Track the engine.
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'SirVer/ultisnips'
+"" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
 
 "" syntax checking on save
 Plug 'scrooloose/syntastic'
