@@ -55,6 +55,9 @@ Plug 'scrooloose/syntastic'
 "" Plug 'junegunn/vim-easy-align'
 Plug 'godlygeek/tabular'
 
+"" add automaticaly end of [{(
+Plug 'jiangmiao/auto-pairs'
+
 "" drawer showing ctags
 Plug 'majutsushi/tagbar'
 
