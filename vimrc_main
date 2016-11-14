@@ -400,6 +400,22 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_detect_iminsert=1
 
+" to only show the tail, e.g. a branch 'feature/foo' becomes 'foo', use
+let g:airline#extensions#branch#format = 1
+
+" truncate long branch names to a fixed length >
+let g:airline#extensions#branch#displayed_head_limit = 18
+
+" enable/disable showing a summary of changed hunks under source control.
+let g:airline#extensions#hunks#enabled = 0
+
+" enable/disable word counting.
+let g:airline#extensions#wordcount#enabled = 0
+
+" The `unique_tail_improved` - another algorithm, that will smartly uniquify
+" buffers names with similar filename, suppressing common parts of paths.
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 " --------------
 
 " SHOW INVISIBLES
