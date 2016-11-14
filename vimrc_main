@@ -614,6 +614,15 @@ nmap <localleader>bt :tab sball<CR>
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
+" copy/paste to Clipboard only
+noremap <Leader>y "*y
+noremap <Leader>yy "*yy
+noremap <Leader>p "*p
+" copy/paste to both Clipboard and Primary (vim)
+noremap <Leader>Y "+y
+noremap <Leader>YY "+yy
+noremap <Leader>P "+p
+
 " --------------
 
 " Cucumber (cucumber.vim)
