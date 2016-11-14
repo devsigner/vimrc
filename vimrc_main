@@ -171,6 +171,11 @@ nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
 nnoremap <silent> N   n:call HLNext(0.4)<cr>
 nnoremap <silent> n   N:call HLNext(0.4)<cr>
 
+" Scroll 20 characters to the right
+map <C-L> 20zl
+" Scroll 20 characters to the left
+map <C-H> 20zh
+
 " DRAG IN VISUAL MODE
 " -------------------
 " <m-j> and <m-k> to drag lines in any mode (m is alt/option)
