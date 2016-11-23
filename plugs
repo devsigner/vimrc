@@ -1,8 +1,10 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-call plug#begin('~/.vim/plugged')
-autocmd! bufwritepost vundle source ~/.vim/plugs
+set rtp+=~/.dotfiles/vim
+
+call plug#begin('~/.dotfiles/vim/plugged')
+autocmd! bufwritepost vundle source ~/.dotfiles/vim/plugs
 
 "" project wide search
 Plug 'mileszs/ack.vim'

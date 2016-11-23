@@ -1,14 +1,9 @@
 " vim-plug: Vim plugin manager
 " ============================
 "
-" Download plug.vim and put it in ~/.vim/autoload
-"
-"   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"
 " Edit your .vimrc
 "
-"   call plug#begin('~/.vim/plugged')
+"   call plug#begin('~/.dotfiles/vim/plugged')
 "
 "   " Make sure you use single quotes
 "

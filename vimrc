@@ -4,7 +4,7 @@
 " It then loads ~/.vim/vimrc_main which has the main
 " configuration that works across all systems.
 
-source ~/.vim/plugs
-source ~/.vim/vimrc_main
+source ~/.dotfiles/vim/plugs
+source ~/.dotfiles/vim/vimrc_main
 
 " Put platform specific stuff here.
